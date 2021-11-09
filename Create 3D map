@@ -1,0 +1,23 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+import seaborn as sns
+from mpl_toolkits.mplot3d import Axes3D
+
+df = pd.read_csv('Activity_Cycling_1.csv')
+sns.set(style = "darkgrid")
+
+fig = plt.figure()
+ax = fig.add_subplot(111, projection = '3d')
+
+x = df['Latitude']
+y = df['Longitude']
+z = df['Altitude']
+
+ax.set_xlabel("Latitude")
+ax.set_ylabel("Longitude")
+ax.set_zlabel("Altitude")
+
+ax.scatter(x, y, z)
+
+plt.show()
+
